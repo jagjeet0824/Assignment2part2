@@ -1,0 +1,46 @@
+﻿@model WebApplication2.Models.Table1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Table1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Songs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Songs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Album)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Album)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie)
+        </dd>
+
+    </dl>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Price }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+}
